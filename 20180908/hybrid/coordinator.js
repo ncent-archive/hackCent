@@ -27,8 +27,8 @@ async function isAdmin(authorId) {
 
 class Coordinator {
   constructor(coordinatorOpt) {
-    this.options = coordinatorOpt; // stores steps data, reward amount, etc.
-    // Store reward amount from options
+    this.steps = coordinatorOpt['steps'];
+    this.reward = coordinatorOpt['reward'];
     this.players = {}; // id -> player
     this.submissions = {}; // id -> submission
     this.playerSubmissions = {}; // joins table between player and submissions
@@ -70,14 +70,15 @@ class Coordinator {
     }
   }
 
-  onSubmittedResponse(response) {
-    // this is already verified as a response to one of the active_steps
+  onSubmission(title, msg) {
+    console.log(`We have received a submission for ${title}`);
+    console.log(`The submission is ${msg.text}`);
+    console.log(`The submission is written by username ${msg.from.username}`);
   }
 
   requestSubmissions(submissionDetails) {
     const title = submissionDetails['title'];
     this.active_steps.push(title);
-    // TODO change submissionRequestText to correct param
     bot.sendMessage(CHAT_ID, submissionDetails['submissionRequestText']);
   }
 
@@ -121,7 +122,7 @@ class Coordinator {
         for (let i = 0; i < this.active_steps.length; i++) {
           const title = this.active_steps[i];
           if (msg.text[0] === '#' && (msg.substr(1, title.length) === title)) {
-            this.onSubmittedResponse(msg);
+            this.onSubmission(title, msg);
           }
         }
         if (isAdmin(msg.from.id)) {
@@ -141,12 +142,11 @@ class Coordinator {
 
   beginProject() {
     this.hookMessage();
-    // schedules all request for submissions
-    // schedule polls
+    // for each set
+      // scheduleRequestForSubmissions
   }
 }
 
 
 const coord = new Coordinator({});
-coord.renderPoll();
 coord.beginProject();
