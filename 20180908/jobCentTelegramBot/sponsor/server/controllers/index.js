@@ -1,5 +1,5 @@
-const usersController = require("./users");
+const sponsorsController = require("./sponsors");
 module.exports = {
-  usersController,
+  sponsorsController,
 
 };
