@@ -5,122 +5,122 @@
 "steps":
 [
 	{
-	    "id"  : 1, // Used to track dependency
+	    "id"  : 1,
 		"taskName" : "Script",
 		"requirements" : "Write Script for the technical illustration project",
-		"submissionPeriodMinutes" : 180, // Time within which the submission has to hap`pen(in minutes).
-		"percentOfTotalRewards" : 10, // percentage 10 % of 100 ETH
-		"votingPeriodMinutes" : 30, //  Voting time post submission after which the contest closes(in minutes).
+		"submissionPeriodMinutes" : 180,
+		"percentOfTotalRewards" : 10,
+		"votingPeriodMinutes" : 30,
 		"numberOfFinalists":3,
 		"prerequisites": []
 	},
 	{
-	    "id"  : 2, // Used to track dependency
+	    "id"  : 2,
 		"taskName`" : "Storyboard",
 		"description" : "Create storyboard for the technical illustration project",
-		"submissionPeriodMinutes" : 180, // Time within which the submission has to happen(in minutes).
-		"percentOfTotalRewards" : 10, // percentage 10 % of 100 ETH
-		"votingPeriodMinutes" : 30, //  Voting time post submission after which the contest closes(in minutes).
+		"submissionPeriodMinutes" : 180,
+		"percentOfTotalRewards" : 10,
+		"votingPeriodMinutes" : 30,
 		"numberOfFinalists":3,
 		"prerequisites": [1]
 	},
 	{
-	    "id"  : 3, // Used to track dependency
+	    "id"  : 3,
 		"title" : "Character Design - Phase I",
 		"description" : "Create character design for the technical illustration project",
-		"submissionPeriodMinutes" : 180, // Time within which the submission has to happen(in minutes).
-		"percentOfTotalRewards" : 10, // percentage 10 % of 100 ETH
-		"votingPeriodMinutes" : 30, //  Voting time post submission after which the contest closes(in minutes).
+		"submissionPeriodMinutes" : 180,
+		"percentOfTotalRewards" : 10,
+		"votingPeriodMinutes" : 30,
 		"numberOfFinalists":3,
 		"prerequisites": [1]
 	},
 	{
-	    "id"  : 4, // Used to track dependency
+	    "id"  : 4,
 		"title" : "Charecter Design - Phase II",
 		"description" : "Create character design for the technical illustration project",
-		"submissionPeriodMinutes" : 180, // Time within which the submission has to happen(in minutes).
-		"percentOfTotalRewards" : 10, // percentage 10 % of 100 ETH
-		"votingPeriodMinutes" : 30, //  Voting time post submission after which the contest closes(in minutes).
+		"submissionPeriodMinutes" : 180,
+		"percentOfTotalRewards" : 10,
+		"votingPeriodMinutes" : 30,
 		"numberOfFinalists":3,
 		"prerequisites": [2,3]
 	},
 	{
-	    "id"  : 5, // Used to track dependency
+	    "id"  : 5,
 		"title" : "Animation - Phase I",
 		"description" : "Create animation for the technical illustration project",
-		"submissionPeriodMinutes" : 180, // Time within which the submission has to happen(in minutes).
-		"percentOfTotalRewards" : 10, // percentage 10 % of 100 ETH
-		"votingPeriodMinutes" : 30, //  Voting time post submission after which the contest closes(in minutes).
+		"submissionPeriodMinutes" : 180,
+		"percentOfTotalRewards" : 10,
+		"votingPeriodMinutes" : 30,
 		"numberOfFinalists":3,
 		"prerequisites": [2, 3]
 	},
 	{
-	    "id"  : 5, // Used to track dependency
+	    "id"  : 5,
 		"title" : "Animation - Phase II",
 		"description" : "Create animation for the technical illustration project",
-		"submissionPeriodMinutes" : 180, // Time within which the submission has to happen(in minutes).
-		"percentOfTotalRewards" : 10, // percentage 10 % of 100 ETH
-		"votingPeriodMinutes" : 30, //  Voting time post submission after which the contest closes(in minutes).
+		"submissionPeriodMinutes" : 180,
+		"percentOfTotalRewards" : 10,
+		"votingPeriodMinutes" : 30,
 		"numberOfFinalists":3,
 		"prerequisites": [3,5]
 	},
 	{
-	    "id"  : 6, // Used to track dependency
+	    "id"  : 6,
 		"title" : "Background Design",
 		"description" : "Create background design for the technical illustration project",
-		"submissionPeriodMinutes" : 180, // Time within which the submission has to happen(in minutes).
-		"percentOfTotalRewards" : 10, // percentage 10 % of 100 ETH
-		"votingPeriodMinutes" : 30, //  Voting time post submission after which the contest closes(in minutes).
+		"submissionPeriodMinutes" : 180,
+		"percentOfTotalRewards" : 10,
+		"votingPeriodMinutes" : 30,
 		"numberOfFinalists":3,
 		"prerequisites": [2]
 	},
 	{
-	    "id"  : 7, // Used to track dependency
+	    "id"  : 7,
 		"title" : "Animation- Phase III",
 		"description" : "Create animation for the technical illustration project",
-		"submissionPeriodMinutes" : 180, // Time within which the submission has to happen(in minutes).
-		"percentOfTotalRewards" : 10, // percentage 10 % of 100 ETH
-		"votingPeriodMinutes" : 30, //  Voting time post submission after which the contest closes(in minutes).
+		"submissionPeriodMinutes" : 180,
+		"percentOfTotalRewards" : 10,
+		"votingPeriodMinutes" : 30,
 		"numberOfFinalists":3,
 		"prerequisites": [5, 6]
 	},
 	{
-	    "id"  : 8, // Used to track dependency
+	    "id"  : 8,
 		"title" : "Music",
 		"description" : "Create Music for the technical illustration project",
-		"submissionPeriodMinutes" : 180, // Time within which the submission has to happen(in minutes).
-		"percentOfTotalRewards" : 10, // percentage 10 % of 100 ETH
-		"votingPeriodMinutes" : 30, //  Voting time post submission after which the contest closes(in minutes).
+		"submissionPeriodMinutes" : 180,
+		"percentOfTotalRewards" : 10,
+		"votingPeriodMinutes" : 30,
 		"numberOfFinalists":3,
 		"prerequisites": [7]
 	},
 	{
-	    "id"  : 9, // Used to track dependency
+	    "id"  : 9,
 		"title" : "Voiceover",
 		"description" : "Create voiceover for the technical illustration project",
-		"submissionPeriodMinutes" : 180, // Time within which the submission has to happen(in minutes).
-		"percentOfTotalRewards" : 10, // percentage 10 % of 100 ETH
-		"votingPeriodMinutes" : 30, //  Voting time post submission after which the contest closes(in minutes).
+		"submissionPeriodMinutes" : 180,
+		"percentOfTotalRewards" : 10,
+		"votingPeriodMinutes" : 30,
 		"numberOfFinalists":3,
 		"prerequisites": [7]
 	},
 	{
-	    "id"  : 10, // Used to track dependency
+	    "id"  : 10,
 		"title" : "Mix",
 		"description" : "Mix audio and video for the technical illustration project",
-		"submissionPeriodMinutes" : 180, // Time within which the submission has to happen(in minutes).
-		"percentOfTotalRewards" : 10, // percentage 10 % of 100 ETH
-		"votingPeriodMinutes" : 30, //  Voting time post submission after which the contest closes(in minutes).
+		"submissionPeriodMinutes" : 180,
+		"percentOfTotalRewards" : 10,
+		"votingPeriodMinutes" : 30,
 		"numberOfFinalists":3,
 		"prerequisites": [8, 9]
 	},
 	{
-	    "id"  : 11, // Used to track dependency
+	    "id"  : 11,
 		"title" : "Editing",
 		"description" : "Edit audio and video for the technical illustration project",
-		"submissionPeriodMinutes" : 180, // Time within which the submission has to happen(in minutes).
-		"percentOfTotalRewards" : 10, // percentage 10 % of 100 ETH
-		"votingPeriodMinutes" : 30, //  Voting time post submission after which the contest closes(in minutes).
+		"submissionPeriodMinutes" : 180, 
+		"percentOfTotalRewards" : 10,
+		"votingPeriodMinutes" : 30,
 		"numberOfFinalists":3,
 		"prerequisites": [10]
 	}
