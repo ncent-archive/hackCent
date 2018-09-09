@@ -1,0 +1,16 @@
+{
+  "name": "hybrid",
+  "version": "1.0.0",
+  "description": "https://medium.com/ncent/assemble-your-crew-b9edbabe32da",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ncent-sandbox-sdk": "^1.3.0",
+    "node-telegram-bot-api": "^0.30.0"
+  }
+}
