@@ -9,7 +9,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    descrition: {
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    tokenName: {
       type: DataTypes.STRING,
       allowNull: false,
     },

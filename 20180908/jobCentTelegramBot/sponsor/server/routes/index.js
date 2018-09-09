@@ -1,4 +1,4 @@
-const sponsorsController = require('./controllers/index').sponsorsController;
+const sponsorsController = require('../controllers').sponsorsController;
 
 module.exports = app => {
   app.get("/api", (req, res) =>
