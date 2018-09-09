@@ -1,3 +1,4 @@
+const videoCentTemplate = require('./videoCentTemplate.json');
 const TelegramBot = require('node-telegram-bot-api');
 const TOKEN = require('./secret');
 const CHAT_ID = -1001318821764;
@@ -28,11 +29,12 @@ async function isAdmin(authorId) {
 class Coordinator {
   constructor(coordinatorOpt) {
     this.steps = coordinatorOpt['steps'];
-    this.reward = coordinatorOpt['reward'];
+    this.reward = coordinatorOpt['totalIncentiveETH'];
     this.players = {}; // id -> player
     this.submissions = {}; // id -> submission
     this.playerSubmissions = {}; // joins table between player and submissions
     this.active_steps = [];
+    this.winners = {};
     this.active_poll_id = 0;
   }
 
@@ -65,6 +67,7 @@ class Coordinator {
   updatePointsOfReferralChain(player, rewardAmount) {
 
     let currentPlayer = player;
+
     let  exponent = 1; 
     do 
     {
@@ -110,12 +113,12 @@ class Coordinator {
     bot.sendMessage(CHAT_ID, `We have completed accepting submissions for ${title}`)
   }
 
-  scheduleRequestForSubmissions(timeFromNow, requestOpt) {
-    setTimeout(()=>{
+  scheduleRequestForSubmissions(timeFromNow, submitMin) {
+    setTimeout(() => {
       this.requestSubmissions(requestOpt);
-      setTimeout(()=>{
+      setTimeout(() => {
         this.endSubmissions(requestOpt);
-      }, 6000);
+      }, submitMin);
     }, timeFromNow);
   }
 
@@ -134,8 +137,12 @@ class Coordinator {
     }
   }
 
+  setRoundWinner(round, plr) {
+    this.winners[round] = plr;
+  }
+
   hookMessage() {
-    bot.on('message', (msg)=>{
+    bot.on('message', (msg) => {
       console.log(msg);
       if ('new_chat_members' in msg) {
         this.onMemberAdded(msg);
@@ -148,8 +155,8 @@ class Coordinator {
         }
         if (isAdmin(msg.from.id)) {
           if (msg.text.slice(0, 14) == '/choose_winner') {
-            const username = msg.text.slice(15);
-
+            const winner = msg.text.slice(15);
+            this.setRoundWinner(this.active_steps[0], winner); // TODO resolve issue of multiple rounds
           }
         }
         // POLL CODE
@@ -163,11 +170,19 @@ class Coordinator {
 
   beginProject() {
     this.hookMessage();
-    // for each set
-      // scheduleRequestForSubmissions
+    const diff = 0;
+    for (let i = 0; i < this.steps; i++) {
+      const step = this.steps[i];
+      const submissionPeriodMinutes = step["submissionPeriodMinutes"];
+      const votingPeriodMinutes = step["votingPeriodMinutes"];
+      const thisDiff = submissionPeriodMinutes + votingPeriodMinutes;
+      this.scheduleRequestForSubmissions(diff, thisDiff);
+      diff += thisDiff;
+    }
+    // find winners
+    // invoke updatePointsOfReferralChain on each winner
   }
 }
 
-
-const coord = new Coordinator({});
+const coord = new Coordinator(videoCentTemplate);
 coord.beginProject();

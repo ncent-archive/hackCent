@@ -5,7 +5,7 @@
 "steps":
 [
 	{
-	    "id"  : 1,
+	  "id"  : 1,
 		"taskName" : "Script",
 		"requirements" : "Write Script for the technical illustration project",
 		"submissionPeriodMinutes" : 180,
@@ -15,7 +15,7 @@
 		"prerequisites": []
 	},
 	{
-	    "id"  : 2,
+	  "id"  : 2,
 		"taskName`" : "Storyboard",
 		"description" : "Create storyboard for the technical illustration project",
 		"submissionPeriodMinutes" : 180,
@@ -25,7 +25,7 @@
 		"prerequisites": [1]
 	},
 	{
-	    "id"  : 3,
+	  "id"  : 3,
 		"title" : "Character Design - Phase I",
 		"description" : "Create character design for the technical illustration project",
 		"submissionPeriodMinutes" : 180,
@@ -35,7 +35,7 @@
 		"prerequisites": [1]
 	},
 	{
-	    "id"  : 4,
+	  "id"  : 4,
 		"title" : "Charecter Design - Phase II",
 		"description" : "Create character design for the technical illustration project",
 		"submissionPeriodMinutes" : 180,
@@ -45,7 +45,7 @@
 		"prerequisites": [2,3]
 	},
 	{
-	    "id"  : 5,
+	  "id"  : 5,
 		"title" : "Animation - Phase I",
 		"description" : "Create animation for the technical illustration project",
 		"submissionPeriodMinutes" : 180,
@@ -55,7 +55,7 @@
 		"prerequisites": [2, 3]
 	},
 	{
-	    "id"  : 5,
+	  "id"  : 5,
 		"title" : "Animation - Phase II",
 		"description" : "Create animation for the technical illustration project",
 		"submissionPeriodMinutes" : 180,
@@ -65,7 +65,7 @@
 		"prerequisites": [3,5]
 	},
 	{
-	    "id"  : 6,
+	  "id"  : 6,
 		"title" : "Background Design",
 		"description" : "Create background design for the technical illustration project",
 		"submissionPeriodMinutes" : 180,
@@ -75,7 +75,7 @@
 		"prerequisites": [2]
 	},
 	{
-	    "id"  : 7,
+	  "id"  : 7,
 		"title" : "Animation- Phase III",
 		"description" : "Create animation for the technical illustration project",
 		"submissionPeriodMinutes" : 180,
@@ -85,7 +85,7 @@
 		"prerequisites": [5, 6]
 	},
 	{
-	    "id"  : 8,
+	  "id"  : 8,
 		"title" : "Music",
 		"description" : "Create Music for the technical illustration project",
 		"submissionPeriodMinutes" : 180,
@@ -95,7 +95,7 @@
 		"prerequisites": [7]
 	},
 	{
-	    "id"  : 9,
+	  "id"  : 9,
 		"title" : "Voiceover",
 		"description" : "Create voiceover for the technical illustration project",
 		"submissionPeriodMinutes" : 180,
@@ -105,7 +105,7 @@
 		"prerequisites": [7]
 	},
 	{
-	    "id"  : 10,
+	  "id"  : 10,
 		"title" : "Mix",
 		"description" : "Mix audio and video for the technical illustration project",
 		"submissionPeriodMinutes" : 180,
@@ -115,10 +115,10 @@
 		"prerequisites": [8, 9]
 	},
 	{
-	    "id"  : 11,
+	  "id"  : 11,
 		"title" : "Editing",
 		"description" : "Edit audio and video for the technical illustration project",
-		"submissionPeriodMinutes" : 180, 
+		"submissionPeriodMinutes" : 180,
 		"percentOfTotalRewards" : 10,
 		"votingPeriodMinutes" : 30,
 		"numberOfFinalists":3,
