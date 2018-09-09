@@ -62,18 +62,37 @@ class Coordinator {
   //   }, timeFromNow);
   // }
 
-  updatePointsOfReferralChain(player) {
+  updatePointsOfReferralChain(player, rewardAmount) {
+
     let currentPlayer = player;
-    while (player.ref !== -1) {
-      // do some point action
-      currentPlayer = this.players[currentPlayer.ref];
-    }
+    let  exponent = 1; 
+    do 
+    {
+        factor = Math.pow(2, exponent);
+        currentPlayer.points = currentPlayer.points + (rewardAmount / factor);
+        exponent = exponent + 1;
+        currentPlayer = this.players[currentPlayer.ref];
+    } while (currentPlayer.ref !== -1)
   }
 
   onSubmission(title, msg) {
     console.log(`We have received a submission for ${title}`);
     console.log(`The submission is ${msg.text}`);
     console.log(`The submission is written by username ${msg.from.username}`);
+    
+    let submission = {};
+    
+    // check if the player previously had submissions
+    if (msg.from.id in this.playerSubmissions)
+    {
+      submission = this.playerSubmissions[msg.from.id]; 
+    } 
+
+    // overwrite previous submissions 
+    submission[title] = msg;
+
+    this.playerSubmissions[msg.from.id] = submission;
+ 
   }
 
   requestSubmissions(submissionDetails) {
@@ -83,6 +102,8 @@ class Coordinator {
   }
 
   endSubmissions(submissionDetails) {
+    // TODO - Pick the top 3 finalist for the submission
+    //      - Post all the submission and let the players vote
     const title = submissionDetails['title'];
     const index = this.active_steps.indexOf(title);
     this.active_steps.splice(index, 1);
